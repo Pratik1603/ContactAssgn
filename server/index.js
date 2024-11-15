@@ -6,17 +6,15 @@ const bodyParser = require('body-parser');
 const app = express();
 const corsOptions = {
     origin: function (origin, callback) {
-        callback(null, true); // Allow all origins
+        callback(null, true); 
     },
-    credentials: true // Allows credentials to be sent
+    credentials: true 
 }
 
-// Enable CORS for all requests or specify your frontend URL
 app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
 
-// Connect to MongoDB
 const PORT=5000;
 mongoose.connect("mongodb+srv://pratikgupta1603:Pratik%402003@cluster0.dpwlcw0.mongodb.net/")
 .then(() => {
@@ -24,9 +22,6 @@ mongoose.connect("mongodb+srv://pratikgupta1603:Pratik%402003@cluster0.dpwlcw0.m
 })
 .catch((error) => console.log(`${error} did not connect`));
 
-
-
-// Contact Schema
 const contactSchema = new mongoose.Schema({
     name: String,
     email: String,

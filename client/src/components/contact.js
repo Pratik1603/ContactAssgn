@@ -10,7 +10,6 @@ const Contacts = () => {
     const [totalContacts, setTotalContacts] = useState(0);
     const [showModal, setShowModal] = useState(false);
 
-    // Form fields
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
@@ -62,7 +61,6 @@ const Contacts = () => {
                 </Button>
             </div>
 
-            {/* Contact List in Table Form */}
             <TableContainer component={Paper} elevation={3}>
                 <Table>
                     <TableHead>
@@ -100,7 +98,6 @@ const Contacts = () => {
                 </Table>
             </TableContainer>
 
-            {/* Pagination Controls */}
             <div className="flex justify-center mt-8">
                 <Button
                     onClick={() => setPage(page - 1)}
@@ -121,7 +118,6 @@ const Contacts = () => {
                 </Button>
             </div>
 
-            {/* Modal for Adding Contact */}
             <Modal
                 open={showModal}
                 onClose={() => setShowModal(false)}
